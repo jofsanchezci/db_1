@@ -99,6 +99,12 @@ insert into Notas(Id, Nota1, Nota2, Nota3, Promedio, Id_estudiante, Asignaturas_
 insert into Notas(Id, Nota1, Nota2, Nota3, Promedio, Id_estudiante, Asignaturas_Codigo_A) values(3,4,4,4,4,9081,1020);
 insert into Notas(Id, Nota1, Nota2, Nota3, Promedio, Id_estudiante, Asignaturas_Codigo_A) values(4,4,4,4,4,9081,1021);
 
+insert into Inscripcion (Estudiantes_Codigo, Asignaturas_Codigo_A) values(9080, 1020);
+insert into Inscripcion (Estudiantes_Codigo, Asignaturas_Codigo_A) values(9080, 1021);
+insert into Inscripcion (Estudiantes_Codigo, Asignaturas_Codigo_A) values(9080, 1022);
+insert into Inscripcion (Estudiantes_Codigo, Asignaturas_Codigo_A) values(9081, 1021);
+insert into Inscripcion (Estudiantes_Codigo, Asignaturas_Codigo_A) values(9081, 1020);
+insert into Inscripcion (Estudiantes_Codigo, Asignaturas_Codigo_A) values(9081, 1022);
 
-select * from Notas;
+select * from Inscripcion;
 
