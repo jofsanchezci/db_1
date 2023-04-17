@@ -45,4 +45,131 @@ VALUES
 ('20','LUI1076','LUIS','H','3','luis2@live.com','655-100-5085','SONY','UNEFON','150','1'),
 ('21','HUG5441','HUGO','H','2','hugo@live.com','655-137-3935','MOTOROLA','AT&T','500','1');
 
+-- Listar los nombres de los usuario
+select * from tblUsuarios;
+select nombre from tblUsuarios;
+-- Calcular el saldo máximo de los usuarios de sexo Mujer
+select max(saldo) from tblUsuarios where sexo='M';
+-- Listar nombre y telefono de los usuarios con telefino nokia, blackberry o sony
+select nombre, telefono from tblUsuarios where marca IN('NOKIA', 'BLACKBERRY', 'SONY');
+-- Contar los usuarios sin saldo o inactivod
+select count(*) from tblUsuarios where NOT activo OR saldo <=0;
+-- Listar el loging de los usuarios con nivel 1,2, o 3
+select usuario from tblUsuarios where nivel in(1,2,3);
+select usuario from tblUsuarios where nivel in(1,2);
+-- Listar los numero telefonicos con saldo menos o igual a 300
+select telefono from tblUsuarios where saldo <= 300; 
+select nombre from tblUsuarios where saldo >= 300; 
+
+-- Calcular la suma de saldos de los usuarios de la compañia telefonica NEXTEL
+select sum(saldo) from tblUsuarios where compañia='NEXTEL';
+
+-- contar el numero de usuarios por compañia telefonica
+select compañia, count(*) from tblUsuarios group by compañia;
+
+-- contar el numero de usuario por nivel
+select nivel, count(*) from tblUsuarios group by nivel;
+
+-- Listar el loging de los usuarios con nivel 2
+select usuario from tblUsuarios where nivel= 2;
+
+-- Mostar el email de los usuarios que usan gmail
+select email from tblUsuarios where email like '%gmail.com';
+
+-- Listar nombre y telefono de los uaurios con telefono LG, SAMSUMG o Motorola
+select nombre, telefono from tblUsuarios where marca in('LG', 'SAMSUNG', 'MOTOROLA'); 
+
+-- listas nombre y telefono de los usuario que no sean de la marca LG o SAMSUNG
+select nombre, telefono from tblUsuarios where marca NOT IN('LG', 'SAMSUMG');
+
+-- listar  el loging y el telefono de los usuarios con compañia telefonica IUSACELL
+select usuario, telefono from tblUsuarios WHERE compañia='IUSACELL';
+
+-- listar el loging y el telefono de los usuarios con compañia telefonica que no sea TELCEL
+select usuario, telefono from tblUsuarios WHERE compañia <> 'TELCEL';
+
+-- Calcular el saldo promedio de los usuarios que tienen telefono marca NOKIA
+select avg(saldo) from tblUsuarios where marca = 'NOKIA';
+select avg(saldo) from tblUsuarios where marca = 'SAMSUNG';
+
+-- Listar el loging y el telefono de los usuarios con compañia telefonica IUSACELL o AXEL
+SELECT usuario, telefono from tblUsuarios where compañia IN('ISACELL', 'AXEL');
+
+-- Mostrar el email de los usuarios que usan yahoo
+select email from tblUsuarios where email like '%yahoo.com';
+-- los que no usan yahoo
+select email from tblUsuarios where email NOT like '%yahoo.com';
+
+-- Listar el loging y el telefono de los usuarios  con compañia telefonia  que no sea TELCEL o IUSACELL
+select usuario, telefono from tblUsuarios where compañia NOT IN('TELECEL', 'ISACELL');
+
+-- listar el login y el telefono de los usuarios con compañia telefonoca UNEFON
+select usuario, telefono from tblUsuarios where compañia = 'UNEFON';
+
+-- Listar las diferentes marcar de celular en orden alfabetico descendendetemente
+select distinct marca from tblUsuarios order by marca desc;
+-- ascendentemenre
+select distinct marca from tblUsuarios order by marca asc;
+
+-- listar las diferentes compañia en orden alfabetico aleatorio
+select distinct compañia from tblUsuarios order by rand();
+select distinct compañia from tblUsuarios order by compañia asc;
+
+-- listar el loging de los usuarios con nivel 0 o 2
+select usuario from tblUsuarios where nivel IN(0,2);
+
+-- calcular el saldo promedio de los usuarios que tiene telefono marca LG
+select avg(saldo) from tblUsuarios where marca='LG';
+
+-- listar el loging de los usuarios con nivel 1 0 3
+select usuario from tblUsuarios where nivel IN (1,3);
+
+-- Listar nombre y telefono  de los uaurios con telefono que no sea de la marca BLACBERRY
+select nombre, telefono from tblUsuarios where marca <> 'BLACKBERRY';
+
+-- listar el loging de los usuarios con nivel 3
+select usuario from tblUsuarios where nivel = 3;
+select usuario from tblUsuarios where nivel = 0;
+select usuario from tblUsuarios where nivel = 1;
+select usuario from tblUsuarios where nivel = 2;
+
+-- contar el numero de usuarios por sexo
+select sexo, count(*) from tblUsuarios group by sexo;
+
+-- listar el loging y el telefino de los usuarios con compañia telefonica AT&T 
+select usuario, telefono from tblUsuarios where compañia = 'AT&T';
+
+-- listar las diferentes compañias en orden alfabetico descendentemente
+select distinct compañia from tblUsuarios order by compañia desc; 
+
+-- listar el loging de los usuarios inactivos
+select usuario from tblUsuarios where NOT activo;
+-- listar los numeros de telefono sin saldo
+select telefono from tblUsuarios where saldo <=0;
+
+-- Calcular el saldo minimo de los usuarios de sexo hombre
+select min(saldo) from tblUsuarios where sexo = 'H';
+
+-- Listar los numeros de telefono con saldo mayor a 300
+select telefono from tblUsuarios where saldo > 300;
+
+-- contar el numero de usuarios  por marca de telefono
+select marca, count(*) from tblUsuarios group by marca;
+
+-- listar el nombre y el tefono de los usuarios con telefono que no sea de la marca LG
+select nombre, telefono from tblUsuarios where marca <> 'LG';
+
+-- listas las diferentes compañias  en orden alfabetico ascendentemente
+select distinct compañia from tblUsuarios order by compañia asc;
+
+-- mostrar el correo de los usuarios que usan hotmail
+select email from tblUsuarios where email like '%hotmail.com';
+
+-- Listar el nombre de los usuarios sin saldo o inactivos
+select nombre from tblUsuarios where NOT activo OR saldo <=0;
+
+-- Listar el loging y el telefono de los uasuarios con compañia telefonica  ISUCELL o UNEFON
+select usuario, telefono from tblUsuarios where compañia in('ISACELL', 'UNEFON'); 
+
+
 
